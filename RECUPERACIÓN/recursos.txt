@@ -1,0 +1,8 @@
+#Revisar la documentación de Bootstrap
+
+http://getbootstrap.com/
+
+
+#tablas
+
+http://getbootstrap.com/css/#tables

@@ -80,6 +80,22 @@ $horadeingreso = date('H:i');
 <input type="time" name="horadeingreso" id=""  class="form-control" required=""  value="<?php echo $horadeingreso; ?>"  readonly>
 </div>
 
+<div class="form-group">
+<label>Área</label>
+<select name="area" id="" class="form-control" required="">
+<option value=""> Seleccionar </option>
+<option value="contabilidad">Contabilidad</option>
+<option value="sistemas">Sistemas</option>
+<option value="compras">Compras</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Comentario</label>
+<textarea name="comentario" id="" rows="4" class="form-control" required="" placeholder="Ingrese su comentario." ></textarea>
+</div>
+
+
 
 
 
