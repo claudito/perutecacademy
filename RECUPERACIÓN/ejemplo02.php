@@ -18,9 +18,9 @@ $horadeingreso = date('H:i');
   <meta charset="UTF-8">
   <title>Ejemplo 02</title>
 
-<!-- Optimizar el sitio en dispositivos móviles -->
+<!-- Optimizar el sitio en dispositivos móviles 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">-->
 
 <!-- Importar CSS de Bootstrap  -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
