@@ -10,8 +10,8 @@ protected $pass;
 function __construct($user='',$pass='')
 {
    
-   $this->user  = $user;
-   $this->pass   = $pass;
+   $this->user  = addslashes($user);
+   $this->pass  = addslashes($pass);
 
 }
 

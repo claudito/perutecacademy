@@ -2,10 +2,9 @@
 
 <?php 
 
+$pass  =  "' OR '1'='1 ";
 
-$dato = array('id' => '3' ,'nombres'=>'Luis Augusto');
+echo addslashes($pass);
 
-
-echo $dato['nombres'];
 
  ?>
