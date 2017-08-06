@@ -2,9 +2,19 @@
 
 include'autoload.php';
 
-$session = new Session();
+session_start();
 
-$session->existe();
+#isset($nombre) : si existe.
+#!isset($nombre) : no existe.
+
+if (!isset($_SESSION['id'])) 
+{
+  include'vistas/acceso.php';
+} 
+else 
+{
+  include'vistas/home.php';
+}
 
 
 

@@ -21,7 +21,7 @@ function login()
 
   $conexion =  new Conexion();
   $query  =  "SELECT  * FROM alumnos  WHERE user='".$this->user."' AND 
-              pass='".md5($this->pass)."' ";
+              pass='".md5($this->pass)."'";
   $result = $conexion->query($query);
 	if ($result->num_rows > 0)
 	{  
