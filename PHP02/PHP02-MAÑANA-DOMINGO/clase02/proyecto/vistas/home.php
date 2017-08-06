@@ -1,16 +1,40 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<title>Bienvenidos</title>
-</head>
-<body>
+<?php 
+
+$assets  =  new Assets();
+$html    =  new Html();
+$assets ->principal('Bienvenidos');
+$html   ->header();
+
+?>
+
+<div class="row">
 	
-<h1>Hola: <?php echo $_SESSION['nombres'].' '.$_SESSION['apellidos']; ?></h1>
+<div class="col-md-12">
+<?php include'vistas/nav.php'; ?>
+</div>	
+
+</div>
 
 
-<a href="vistas/perfil.php">Mi Perfil</a>
-<a href="controlador/logout.php">Cerrar Sesión</a>
+<div class="row">
+<div class="col-md-12">
+<div class="jumbotron">
+	<div class="container">
+		<h1>Hello, world!</h1>
+		<p>Contents ...</p>
+		<p>
+			<a class="btn btn-primary btn-lg">Learn more</a>
+		</p>
+	</div>
+</div>
+</div>
+</div>
 
-</body>
-</html>
+
+
+
+<?php 
+
+$html->footer('PerúTec Academy');
+
+ ?>

@@ -19,12 +19,13 @@ class html
 
 	}
 
-	function footer()
+	function footer($texto)
 	{
 	
 	echo '
+    
     <br></br>
-	<p class="text-center">&copy; '.date('Y').' PeruTec</p>
+	<p class="text-center">&copy; '.date('Y').' '.$texto.'</p>
 	</div>
 	</body>
 	</html>';
