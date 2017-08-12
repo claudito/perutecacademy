@@ -21,4 +21,5 @@ $estado = ($estado) ? "Uno" : "Cero" ;
 echo $estado;
 
 
+
  ?>

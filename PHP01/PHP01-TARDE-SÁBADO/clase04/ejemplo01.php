@@ -17,10 +17,12 @@ Operadores Lógicos
 > , <    mayor , menor
 >= , <=  mayor igual , menor igual
 !        Negación
-==!      No es igual
+!==      No es igual
 AND      y 
 ||       o
 OR       or
+->       asignación - objetos
+=>       asignación de valores de array
 
 #Operadores  Aritméticos: 
 +        suma
