@@ -1,0 +1,14 @@
+-- API DE CONEXIÓN PHP
+http://php.net/manual/es/mysqlinfo.api.choosing.php
+
+
+-- Sentencias Preparadas
+http://php.net/manual/es/mysqli.quickstart.prepared-statements.php
+
+-- Sentencias Preparadas MYSQLI
+http://php.net/manual/es/mysqli.prepare.php
+http://php.net/manual/es/mysqli-stmt.bind-param.php
+
+
+-- Bootstrap  4
+http://getbootstrap.com/
