@@ -2,6 +2,7 @@
 
 
   try {
+    
     $modelo    = new Conexion();
     $conexion  = $modelo->get_conexion();
 

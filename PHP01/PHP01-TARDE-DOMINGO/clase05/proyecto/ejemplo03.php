@@ -33,6 +33,9 @@
 
 <h1>Lista de Artículos</h1><hr>
 
+<a href="ejemplo04.php" class="btn btn-primary">Registrar Artículo</a>
+
+
 <div class="table-responsive">
 	<table class="table table-hover">
 		<thead>
@@ -44,6 +47,7 @@
 				<th>Cantidad</th>
 				<th>Precio</th>
 				<th>Fecha</th>
+				<th>Acciones</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -58,6 +62,10 @@
 		<td><?php echo round($value['cantidad'],3); ?></td>
 		<td><?php echo round($value['precio'],2); ?></td>
 <td><?php echo date_format(date_create($value['fecha_creacion']),'d/m/Y h:i:s a'); ?></td>
+     <td>
+     <a href="ejemplo05.php?codigo=<?php echo $value['codigo']; ?>"><i class="glyphicon glyphicon-edit"></i></a>
+     <a href="controlador/eliminar.php?codigo=<?php echo $value['codigo'] ?>"><i class="glyphicon glyphicon-trash text-danger"></i></a>
+     </td>
 		</tr>
 		<?php endforeach ?>
 		</tbody>
