@@ -15,7 +15,8 @@
 			die('Este archivo solo se puede ver desde un navegador web');
 
 		/** Se agrega la libreria PHPExcel */
-		include('../../librerias/PHPExcel/PHPExcel.php');
+		
+require_once '../../librerias/PHPExcel/Classes/PHPExcel.php';
 
 		// Se crea el objeto PHPExcel
 		$objPHPExcel = new PHPExcel();
