@@ -8,10 +8,12 @@
     $query     = "SELECT * FROM maeart";
     $statement = $conexion->prepare($query); 
     $statement->execute();
-    $result = $statement->fetchAll();
+    $result   = $statement->fetchAll();
     return $result;
-    } catch (Exception $e) {
-        echo "ERROR: " . $e->getMessage();
+    } 
+    catch (Exception $e) 
+    {
+     echo "ERROR: " . $e->getMessage();
     }
 
 
