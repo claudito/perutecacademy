@@ -1,22 +1,20 @@
 <?php
+  #PHPEXCEL
+  include'../../librerias/PHPExcel/Classes/PHPExcel.php';
+  #Autoload
+  include'../../autoload.php';
+  $conexion  = new Conexion();
 
-  include('../../config.php');
-  include('../../clases/Conexion.php');
-  include('../../clases/Alumnos.php');
-  $db = new Conexion();
-
-	$query     = "SELECT * FROM alumnos";
-	$result    = $db->query($query);
-	$numfilas  = $result->num_rows;
-	if($numfilas > 0 )
+	$alumnos  =  new Alumnos();
+	if(count($alumnos->lista()) > 0 )
 	{
-	 					
-		if (PHP_SAPI == 'cli')
+
+     if (PHP_SAPI == 'cli')
 			die('Este archivo solo se puede ver desde un navegador web');
 
 		/** Se agrega la libreria PHPExcel */
 		
-require_once '../../librerias/PHPExcel/Classes/PHPExcel.php';
+
 
 		// Se crea el objeto PHPExcel
 		$objPHPExcel = new PHPExcel();
@@ -31,7 +29,7 @@ require_once '../../librerias/PHPExcel/Classes/PHPExcel.php';
 							 ->setCategory("Reporte excel");
 
 		$tituloReporte   = "REPORTE DE ALUMNO";
-		$titulosColumnas = array('CÓDIGO', 'NOMBRES', 'APELLIDOS','EDAD','USUARIO','CONTRASEÑA');
+		$titulosColumnas = array('ID', 'NOMBRES', 'APELLIDOS','EDAD','USUARIO','CONTRASEÑA');
 
 
 						
@@ -47,22 +45,21 @@ require_once '../../librerias/PHPExcel/Classes/PHPExcel.php';
         		   
         		    ;
 		
-		
-		//Se agregan los datos de los alumnos
 		$i = 4;
-		while ($fila = $result->fetch_array()) {
-			$objPHPExcel->setActiveSheetIndex(0)
-        		    ->setCellValueExplicit('A'.$i,  $fila['id'],PHPExcel_Cell_DataType::TYPE_NUMERIC)
-		            ->setCellValueExplicit('B'.$i,  $fila['nombres'],PHPExcel_Cell_DataType::TYPE_STRING)
-        		    ->setCellValueExplicit('C'.$i,  $fila['apellidos'],PHPExcel_Cell_DataType::TYPE_STRING)
-        		    ->setCellValueExplicit('D'.$i,  $fila['dni'],PHPExcel_Cell_DataType::TYPE_NUMERIC)
-        		    ->setCellValueExplicit('E'.$i,  $fila['user'],PHPExcel_Cell_DataType::TYPE_STRING)
-        		    ->setCellValueExplicit('F'.$i,  $fila['user'],PHPExcel_Cell_DataType::TYPE_STRING)
+	    foreach ($alumnos->lista() as $key => $value) {
+	    	
+	    	$objPHPExcel->setActiveSheetIndex(0)
+        		    ->setCellValueExplicit('A'.$i,  $value['id'],PHPExcel_Cell_DataType::TYPE_NUMERIC)
+		            ->setCellValueExplicit('B'.$i,  $value['nombres'],PHPExcel_Cell_DataType::TYPE_STRING)
+        		    ->setCellValueExplicit('C'.$i,  $value['apellidos'],PHPExcel_Cell_DataType::TYPE_STRING)
+        		    ->setCellValueExplicit('D'.$i,  $value['dni'],PHPExcel_Cell_DataType::TYPE_NUMERIC)
+        		    ->setCellValueExplicit('E'.$i,  $value['user'],PHPExcel_Cell_DataType::TYPE_STRING)
+        		    ->setCellValueExplicit('F'.$i,  $value['user'],PHPExcel_Cell_DataType::TYPE_STRING)
         		    
 
         		     ;
 					$i++;
-		}
+	    }
 
        
 				

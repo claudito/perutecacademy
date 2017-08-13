@@ -5,7 +5,7 @@ include'../session.php';
 
 $assets  =  new Assets();
 $html    =  new Html();
-$assets ->principal('Bienvenidos');
+$assets ->principal('Lista de Alumnos');
 $assets ->datatables();
 $html   ->header();
 
@@ -30,6 +30,7 @@ $html   ->header();
 		Lista de Alumnos
 		<div class="pull-right">
 		<a href="../docs/excel/alumnos.php" class="btn btn-success btn-xs" >excel</a>
+		<a href="../docs/pdf/alumnos.php" target="_blank" class="btn btn-warning btn-xs" >pdf</a>
 		</div>
 	</div>
 	<div class="panel-body">
@@ -49,7 +50,7 @@ $html   ->header();
         $alumnos = new Alumnos();
 	    foreach ($alumnos->lista() as $key => $value): ?>
 	    <tr>
-	    <td><?php echo $value['id'] ?></td>
+	    <td><a href="../docs/pdf/detalle.php?id=<?php echo $value['id'];  ?>"><?php echo $value['id'] ?></a></td>
 	    <td><?php echo $value['nombres'] ?></td>
 	    <td><?php echo $value['apellidos'] ?></td>
 	    <td><?php echo $value['dni'] ?></td>

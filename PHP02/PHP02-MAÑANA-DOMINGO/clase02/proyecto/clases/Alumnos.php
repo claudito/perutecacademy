@@ -25,6 +25,24 @@ while ($fila  =  mysqli_fetch_assoc($result))
 }
 
 
+function consulta($id)
+{
+	
+$dato     = array();
+$conexion =  new Conexion();
+$query    =  "SELECT  * FROM alumnos 
+              WHERE id='".$id."'";
+$result   =  $conexion->query($query);
+while ($fila  =  mysqli_fetch_assoc($result)) 
+{
+	$dato[] =  $fila;
+}
+   
+   return $dato;
+
+}
+
+
 
 
 }
