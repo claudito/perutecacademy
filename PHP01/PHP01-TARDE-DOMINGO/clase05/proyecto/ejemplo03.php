@@ -40,6 +40,10 @@
 				<th>ID</th>
 				<th>Código</th>
 				<th>Descripción</th>
+				<th>Unidad</th>
+				<th>Cantidad</th>
+				<th>Precio</th>
+				<th>Fecha</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -50,6 +54,10 @@
 		<td><?php echo $value['id']; ?></td>
 		<td><?php echo $value['codigo']; ?></td>
 		<td><?php echo $value['descripcion']; ?></td>
+		<td><?php echo $value['unidad']; ?></td>
+		<td><?php echo round($value['cantidad'],3); ?></td>
+		<td><?php echo round($value['precio'],2); ?></td>
+<td><?php echo date_format(date_create($value['fecha_creacion']),'d/m/Y h:i:s a'); ?></td>
 		</tr>
 		<?php endforeach ?>
 		</tbody>

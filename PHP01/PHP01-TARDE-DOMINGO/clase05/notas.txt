@@ -12,3 +12,7 @@ http://php.net/manual/es/mysqli-stmt.bind-param.php
 
 -- Bootstrap  4
 http://getbootstrap.com/
+
+
+-- Función fecha date
+http://php.net/manual/es/function.date.php
