@@ -5,6 +5,7 @@
         
     $modelo    = new Conexion();
     $conexion  = $modelo->get_conexion();
+    
     $query     = "SELECT * FROM maeart";
     $statement = $conexion->prepare($query); 
     $statement->execute();
