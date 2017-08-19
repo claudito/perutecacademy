@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `codigo` varchar(11) NOT NULL,
   `nombres` varchar(100) NOT NULL,
-  `apellidos` varchar(10) NOT NULL,
+  `apellidos` varchar(100) NOT NULL,
   `fecha_creacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
