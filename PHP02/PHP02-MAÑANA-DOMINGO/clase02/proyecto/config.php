@@ -7,6 +7,7 @@ define("SERVERBD", "localhost");
 define("USERBD", "root");
 define("PASSBD", "");
 define("BD", "clase01");
+define("MAX_FILE_SIZE", "5000000");
 
 
 
