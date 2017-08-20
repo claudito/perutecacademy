@@ -39,6 +39,7 @@
             <li><a href="#">Oficinas</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Articulos</a></li>
+            <li><a href="<?php echo URL ?>pages/estadisticas.php">Estadisticas</a></li>
           </ul>
         </li>
 

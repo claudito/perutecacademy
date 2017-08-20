@@ -1,0 +1,13 @@
+
+mysql workbench link de descarga
+https://dev.mysql.com/downloads/workbench/
+
+
+Prerequisitos
+
+Net framework 4.5
+https://www.microsoft.com/en-us/download/details.aspx?id=306534
+
+
+Visual c++
+https://www.microsoft.com/en-us/download/details.aspx?id=48145

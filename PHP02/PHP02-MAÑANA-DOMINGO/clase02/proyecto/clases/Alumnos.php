@@ -24,6 +24,23 @@ while ($fila  =  mysqli_fetch_assoc($result))
 
 }
 
+function estadisticas()
+{
+	
+$dato     = array();
+$conexion =  new Conexion();
+$query    =  "SELECT  * FROM estadisticas";
+$result   =  $conexion->query($query);
+while ($fila  =  mysqli_fetch_assoc($result)) 
+{
+	$dato[] =  $fila;
+}
+   
+   return $dato;
+
+}
+
+
 
 function consulta($id)
 {
