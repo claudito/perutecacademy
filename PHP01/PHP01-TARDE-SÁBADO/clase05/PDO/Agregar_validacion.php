@@ -18,8 +18,8 @@
     } 
     else 
     {
-     $query     = "INSERT INTO usuarios(codigo,nombres,apellidos)VALUES(:codigo,:nombres,:$apellidos)";
-    $statement = $conexion->prepare($query);
+     $query     = "INSERT INTO usuarios(codigo,nombres,apellidos)VALUES(:codigo,:nombres,:apellidos)";
+    $statement = $bd->prepare($query);
     $statement->bindParam(':codigo',$codigo);
     $statement->bindParam(':nombres',$nombres);
     $statement->bindParam(':apellidos',$apellidos);

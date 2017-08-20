@@ -8,26 +8,19 @@ $apellidos  =  $_POST['apellidos'];
 
 $usuarios  =  new Usuarios();
 
-$valor     =  $usuarios->agregar($codigo,$nombres,$apellidos);
+$valor     =  $usuarios->actualizar($codigo,$nombres,$apellidos);
 
 
 switch ($valor) {
 	case 'ok':
 	echo "<script>
-    alert('Usuario Registrado');
+    alert('Usuario Actualizado');
     window.location='../vistas';
 	</script>";
-		break;
-	case 'existe':
-	echo "<script>
-    alert('Usuario Duplicado,intentelo de nuevo');
-    window.location='../vistas';
-	</script>";
-		break;
-	
+		break;	
 	default:
 	echo "<script>
-    alert('Error de Registro de Usuario');
+    alert('Error de Actualización');
     window.location='../vistas';
 	</script>";
 		break;

@@ -40,7 +40,7 @@
 $usuarios  =  new Usuarios();
 
  ?>
- <?php if (count($usuarios->listar())>0): ?>
+ <?php if ( count($usuarios->listar())  >0 ): ?>
   <div class="panel panel-default">
   	<div class="panel-heading">
   		<h3 class="panel-title">Lista de Usuarios</h3>
@@ -53,6 +53,7 @@ $usuarios  =  new Usuarios();
   					<th>Código</th>
   					<th>Nombres</th>
   					<th>Apellidos</th>
+            <th>Acciones</th>
   				</tr>
   			</thead>
   			<tbody>
@@ -62,6 +63,13 @@ $usuarios  =  new Usuarios();
 			<td><?php echo $value['codigo']; ?></td>
 			<td><?php echo $value['nombres']; ?></td>
 			<td><?php echo $value['apellidos']; ?></td>
+      <td>
+       
+      <a href="actualizar.php?codigo=<?php echo $value['codigo']; ?>"><i class="glyphicon glyphicon-edit"></i></a>
+      
+      <a href="../controlador/eliminar.php?codigo=<?php echo $value['codigo']; ?>"><i class="glyphicon glyphicon-trash text-danger"></i></a>
+
+      </td>
 			</tr>
 
   			<?php endforeach ?>

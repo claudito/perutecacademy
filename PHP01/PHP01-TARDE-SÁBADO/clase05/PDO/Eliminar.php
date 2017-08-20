@@ -3,7 +3,8 @@
    try {
     $conexion    = new Conexion();
     $bd          = $conexion->get_conexion();
-     $query     = "DELETE FROM  usuarios  WHERE codigo=:codigo";
+
+    $query     = "DELETE FROM  usuarios  WHERE codigo=:codigo";
     $statement = $bd->prepare($query);
     $statement->bindParam(':codigo',$codigo);
     if($statement)
