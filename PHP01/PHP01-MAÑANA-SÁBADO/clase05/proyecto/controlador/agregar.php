@@ -11,7 +11,24 @@
  $articulos  =  new Articulos();
  $valor  = $articulos->agregar($codigo,$descripcion,$unidad,$cantidad,$precio);
 
- echo $valor;
+
+switch ($valor) {
+	case 'ok':
+	echo "
+	<script>
+    alert('Articulo Registrado');
+    window.location='../vistas' 
+	</script>";
+		break;
+	
+	default:
+	echo "
+	<script>
+    alert('Error de Registro');
+    window.location='../vistas' 
+	</script>";
+		break;
+}
 
 
 

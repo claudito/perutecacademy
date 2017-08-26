@@ -53,8 +53,39 @@ function actualizar()
 }
 
 
-function eliminar()
+function eliminar($codigo)
 {
+
+  try 
+  {
+     
+    $conexion = new Conexion();
+    $bd       = $conexion->get_conexion();
+    $query    = "DELETE FROM maeart WHERE codigo=:codigo";
+    $statement= $bd->prepare($query);
+    $statement->bindParam(':codigo',$codigo);
+    if ($statement)
+    {
+      $statement->execute();
+      return "ok";
+    } 
+    else 
+    {
+      return "error";
+    }
+
+
+
+
+  } 
+  catch (Exception $e) 
+  {
+    
+    echo "Error:".$e->getMessage();
+
+  }
+
+
 	
 }
 
@@ -80,9 +111,32 @@ function listar()
 }
 
 
-function consulta()
+function consulta($codigo,$campo)
 {
 	
+try 
+{
+
+$conexion =  new Conexion();
+$bd       =  $conexion->get_conexion();
+$query    =  "SELECT * FROM maeart WHERE codigo=:codigo";
+$statement=  $bd->prepare($query);
+$statement->bindParam(':codigo',$codigo);
+$statement->execute();
+$result  =  $statement->fetch();
+return $result[$campo];
+
+} 
+catch (Exception $e) 
+{
+
+echo "Error:".$e->getMessage();
+  
+}
+
+
+
+
 }
 
 
