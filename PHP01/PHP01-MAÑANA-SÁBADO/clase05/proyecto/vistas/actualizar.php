@@ -52,7 +52,7 @@ $articulos = new Articulos();
  value="<?php echo $articulos->consulta($codigo,'precio'); ?>">
 </div>
 
-<button class="btn btn-primary">Agregar</button>
+<button class="btn btn-primary">Actualizar</button>
 
 
 </form>

@@ -47,8 +47,31 @@ function agregar($codigo,$descripcion,$unidad,$cantidad,$precio)
 
 }
 
-function actualizar()
+function actualizar($codigo,$descripcion,$unidad,$cantidad,$precio)
 {
+
+  $conexion =  new Conexion();
+  $bd       =  $conexion->get_conexion();
+  $query    =  "UPDATE maeart SET descripcion=:descripcion,unidad=:unidad,cantidad=:cantidad,precio=:precio WHERE codigo=:codigo";
+  $statement = $bd->prepare($query);
+  $statement->bindParam(':codigo',$codigo);
+  $statement->bindParam(':descripcion',$descripcion);
+  $statement->bindParam(':unidad',$unidad);
+  $statement->bindParam(':cantidad',$cantidad);
+  $statement->bindParam(':precio',$precio);
+  
+  if ($statement)
+  {
+    $statement->execute();
+    return "ok";
+  } 
+  else
+  {
+    return "error";
+  }
+  
+
+
 	
 }
 
