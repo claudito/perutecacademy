@@ -34,17 +34,17 @@
 	
 <div class="form-group">
 <label>Código</label>
-<input type="text" name="codigo" id="" class="form-control">
+<input type="text" name="codigo" id="" class="form-control" required="">
 </div>
 
 <div class="form-group">
 <label>Nombres</label>
-<input type="text" name="nombres" id="" class="form-control">
+<input type="text" name="nombres" id="" class="form-control" required="">
 </div>
 
 <div class="form-group">
 <label>Apellidos</label>
-<input type="text" name="apellidos" id="" class="form-control">
+<input type="text" name="apellidos" id="" class="form-control" required="">
 </div>
 
 

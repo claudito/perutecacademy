@@ -50,9 +50,11 @@ function agregar($codigo,$descripcion,$unidad,$cantidad,$precio)
 function actualizar($codigo,$descripcion,$unidad,$cantidad,$precio)
 {
 
+try {
+  
   $conexion =  new Conexion();
   $bd       =  $conexion->get_conexion();
-  $query    =  "UPDATE maeart SET descripcion=:descripcion,unidad=:unidad,cantidad=:cantidad,precio=:precio WHERE codigo=:codigo";
+  $query    =  "UPDATE maeassrt SET descripcion=:descripcion,unidad=:unidad,cantidad=:cantidad,precio=:precio WHERE codigo=:codigo";
   $statement = $bd->prepare($query);
   $statement->bindParam(':codigo',$codigo);
   $statement->bindParam(':descripcion',$descripcion);
@@ -69,6 +71,13 @@ function actualizar($codigo,$descripcion,$unidad,$cantidad,$precio)
   {
     return "error";
   }
+
+
+} catch (Exception $e) {
+  
+  echo "Error:".$e->getMessage();
+
+}
   
 
 

@@ -11,7 +11,6 @@
  $articulos  =  new Articulos();
  $valor  = $articulos->actualizar($codigo,$descripcion,$unidad,$cantidad,$precio);
 
-
 switch ($valor) {
 	case 'ok':
 	echo "
@@ -29,7 +28,6 @@ switch ($valor) {
 	</script>";
 		break;
 }
-
 
 
 

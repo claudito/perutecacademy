@@ -2,11 +2,16 @@
 
 include'../autoload.php';
 
-$codigo     =  $_POST['codigo'];
-$nombres    =  $_POST['nombres'];
-$apellidos  =  $_POST['apellidos'];
 
-$usuarios  =  new Usuarios();
+
+$codigo     =  htmlspecialchars(trim($_POST['codigo']), ENT_QUOTES,'UTF-8');
+$nombres    =   htmlspecialchars(trim($_POST['nombres']), ENT_QUOTES,'UTF-8');
+$apellidos  =   htmlspecialchars(trim($_POST['apellidos']), ENT_QUOTES,'UTF-8');
+
+
+if (strlen($codigo)>0 AND strlen($nombres)>0 AND strlen($apellidos)>0) 
+{
+	$usuarios  =  new Usuarios();
 
 $valor     =  $usuarios->agregar($codigo,$nombres,$apellidos);
 
@@ -32,6 +37,18 @@ switch ($valor) {
 	</script>";
 		break;
 }
+}
+else
+{
+	echo "<script>
+    alert('Algún Dato esta vacio');
+    window.location='../vistas/agregar.php';
+	</script>";
+}
+
+
+
+
 
 
  ?>
