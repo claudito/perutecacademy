@@ -2,37 +2,74 @@
 
 include'../autoload.php';
 
-$codigo       =  $_POST['codigo'];
-$descripcion  =  $_POST['descripcion'];
-$unidad       =  $_POST['unidad'];
-$cantidad     =  $_POST['cantidad'];
-$precio       =  $_POST['precio'];
+ $codigo       =  strlen(trim($_POST['codigo']));
+ $descripcion  =  strlen(trim($_POST['descripcion']));
+ $unidad       =  $_POST['unidad'];
+ $cantidad     =  $_POST['cantidad'];
+ $precio       =  $_POST['precio'];
 
+
+if ($codigo>0 AND $descripcion>0) 
+
+{
+ 
 $articulos = new Articulos();
 $valor     = $articulos->agregar($codigo,$descripcion,$unidad,$cantidad,$precio);
 
-
 switch ($valor) {
-	case 'existe':
-    echo "<script>
-	alert('Código Duplicado')
-    window.location='../ejemplo04.php';
-	</script>";
-		break;
 	case 'ok':
-    echo "<script>
-	alert('Código Registrado')
-    window.location='../ejemplo03.php';
-	</script>";
+	echo '<script>
+swal({
+  title: "Buen Trabajo",
+  type:  "success",
+  text: "Artículo Registrado",
+  timer: 2000,
+  showConfirmButton: false
+});
+</script>';
+break;
+	case 'existe':
+	echo '<script>
+swal({
+  title: "Código Duplicado",
+  type:  "warning",
+  text: "Intente de Nuevo",
+  timer: 2000,
+  showConfirmButton: false
+});
+</script>';
 		break;
 	
 	default:
-	echo "<script>
-	alert('Error')
-    window.location='../ejemplo03.php';
-	</script>";
+ echo '<script>
+swal({
+  title: "Error",
+  type:  "error",
+  text: "Consulte al área de Soporte",
+  timer: 2000,
+  showConfirmButton: false
+});
+</script>';
 		break;
 }
+
+
+}
+
+else 
+
+{
+echo '<script>
+swal({
+  title: "Algún dato esta vacio",
+  type:  "error",
+  text: "Intente de nuevo",
+  timer: 2000,
+  showConfirmButton: false
+});
+</script>';
+}
+
 
 
 
