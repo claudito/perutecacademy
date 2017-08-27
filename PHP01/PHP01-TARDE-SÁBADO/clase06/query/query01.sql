@@ -33,13 +33,14 @@ engine=innodb;
   INSERT INTO usuario(nombres,apellidos)
   VALUE('OMAR','ZEA'),('JOSE','ROCHA'),('MARIA','PAZ');
   
-  
-  
+
   -- SELECT
     SELECT * FROM usuario;
     SELECT id,nombres,apellidos,DATE_FORMAT(fecha_creacion,'%d/%m/%Y %H:%i:%s') as fecha_creacion FROM usuario;
   
- 
+  --  ACTUALIZAR
+  
+    UPDATE usuario SET nombres='JUAN PABLO',apellidos='TORRES' WHERE id=1
   
 
 
