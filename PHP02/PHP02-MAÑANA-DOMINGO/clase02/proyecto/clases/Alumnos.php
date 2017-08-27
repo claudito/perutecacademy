@@ -3,10 +3,50 @@
 class Alumnos
 {
 
-function __construct()
+protected $nombres;
+protected $apellidos;
+protected $dni;
+protected $user;
+protected $pass;
+
+
+
+function __construct($nombres='',$apellidos='',$dni='',$user='',$pass='')
 {
+  
+  $this->nombres    =  $nombres;
+  $this->apellidos  =  $apellidos;
+  $this->dni        =  $dni;
+  $this->user       =  $user;
+  $this->pass       =  $pass;
 
 }
+
+function agregar()
+{
+
+	$conexion  =  new Conexion();
+	$query     =  "INSERT INTO alumnos(nombres,apellidos,dni,user,pass)
+	 VALUES(
+	 '".$this->nombres."',
+	 '".$this->apellidos."',
+	 '".$this->dni."',
+	 '".$this->user."',
+	 '".$this->pass."')";
+	$result    = $conexion->query($query);
+	if ($result) 
+	{
+		return "ok";
+	} 
+	else 
+	{
+		return "error";
+	}
+	
+
+
+}
+
 
 function lista()
 {

@@ -18,7 +18,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mantenimientos <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Alumnos</a></li>
+            <li><a href="<?php echo URL; ?>pages/alumnos.php">Alumnos</a></li>
             <li><a href="#">Docentes</a></li>
             <li><a href="#">Aulas</a></li>
             <li role="separator" class="divider"></li>
