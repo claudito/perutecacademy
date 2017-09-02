@@ -18,7 +18,7 @@
 </head>
 <body>
 <?php include'../modal/articulos/agregar.php'; ?>
-
+<?php include'../modal/articulos/eliminar.php'; ?>
 <div class="container-fluid">
 <div class="row">
 <div class="col-md-12">

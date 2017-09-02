@@ -1,12 +1,3 @@
-<?php 
 
 
-$articulos = array('0001','mouse','UND',200,89 );
-
-
-echo $articulos[3]
-
-
-
-
- ?>
+&lt;script&gt;alert(&#039;Hackeado&#039;)&lt;/script&gt;

@@ -2,43 +2,28 @@
 
  include'../../autoload.php';
 
- $codigo       =  $_POST['codigo'];
- $descripcion  =  $_POST['descripcion'];
- $unidad       =  $_POST['unidad'];
- $cantidad     =  $_POST['cantidad'];
- $precio       =  $_POST['precio'];
+ $codigo       = htmlentities(trim($_POST['codigo']),ENT_QUOTES,"UTF-8");
+ $descripcion  =  htmlentities(trim($_POST['descripcion']),ENT_QUOTES,"UTF-8");
+ $unidad       =  trim($_POST['unidad']);
+ $cantidad     =  trim($_POST['cantidad']);
+ $precio       =  trim($_POST['precio']);
 
- echo $codigo;
- echo $descripcion;
- echo $unidad;
- echo $cantidad;
- echo $precio;
+if (strlen($codigo)>0 AND strlen($descripcion)>0 AND strlen($unidad)>0) 
+{
 
-/*
  $articulos  =  new Articulos();
  $valor  = $articulos->agregar($codigo,$descripcion,$unidad,$cantidad,$precio);
 
+  echo $valor;
 
-switch ($valor) {
-	case 'ok':
-	echo "
-	<script>
-    alert('Articulo Registrado');
-    window.location='../vistas' 
-	</script>";
-		break;
-	
-	default:
-	echo "
-	<script>
-    alert('Error de Registro');
-    window.location='../vistas' 
-	</script>";
-		break;
+
+}
+else
+{
+  echo "algún dato esta vacio";
 }
 
 
-*/
 
 
  ?>

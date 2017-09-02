@@ -39,27 +39,27 @@ event.preventDefault();
 
 
 
-$('#dataDelete').on('show.bs.modal', function (event) {
-      var button = $(event.relatedTarget) // BotÃ³n que activÃ³ el modal
-      var id = button.data('id') // Extraer la informaciÃ³n de atributos de datos
+$('#modal-eliminar').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) // Botón que activar el modal
+      var codigo = button.data('codigo') // Extraer la información de atributos de datos
       var modal = $(this)
-      modal.find('#id').val(id)
+      modal.find('#codigo').val(codigo)
     })
 
 
 
-$( "#eliminarDatos" ).submit(function( event ) {
+$( "#eliminar" ).submit(function( event ) {
     var parametros = $(this).serialize();
        $.ajax({
           type: "POST",
-          url: "procesos/eliminar.php",
+          url: "../controlador/articulos/eliminar.php",
           data: parametros,
            beforeSend: function(objeto){
             $("#mensaje").html("Mensaje: Cargando...");
             },
           success: function(datos){
           $("#mensaje").html(datos);
-          $('#dataDelete').modal('hide');
+          $('#modal-eliminar').modal('hide');
           loadTabla(1);
           }
       });
