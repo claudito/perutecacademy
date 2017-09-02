@@ -1,8 +1,8 @@
 
-function loadTabla(page){
+function loadTabla(){
     $("#loader").fadeIn('slow');
     $.ajax({
-      url:'../modal/articulos/listar.php',
+      url:'../modal/usuarios/listar.php',
        beforeSend: function(objeto){
       $("#loader").html("<img src='../img/loader.gif'>");
       },
@@ -18,7 +18,7 @@ $( "#agregar" ).submit(function( event ) {
 var parametros = $(this).serialize();
 $.ajax({
   type: "POST",
-  url: "../controlador/articulos/agregar.php",
+  url: "../controlador/usuarios/agregar.php",
   data: parametros,
    beforeSend: function(objeto){
     $("#mensaje").html("Mensaje: Cargando...");
@@ -40,17 +40,16 @@ event.preventDefault();
 $('#modal-eliminar').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget) // Botón que activar el modal
       var codigo = button.data('codigo') // Extraer la información de atributos de datos
-      var modal = $(this)
+      var modal  = $(this)
       modal.find('#codigo').val(codigo)
     })
-
 
 
 $( "#eliminar" ).submit(function( event ) {
     var parametros = $(this).serialize();
        $.ajax({
           type: "POST",
-          url: "../controlador/articulos/eliminar.php",
+          url: "../controlador/usuarios/eliminar.php",
           data: parametros,
            beforeSend: function(objeto){
             $("#mensaje").html("Mensaje: Cargando...");
@@ -58,7 +57,7 @@ $( "#eliminar" ).submit(function( event ) {
           success: function(datos){
           $("#mensaje").html(datos);
           $('#modal-eliminar').modal('hide');
-          loadTabla(1);
+          loadTabla();
           }
       });
       event.preventDefault();
