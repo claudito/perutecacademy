@@ -24,12 +24,16 @@
 <script src="http://t4t5.github.io/sweetalert/dist/sweetalert-dev.js"></script>
 <link rel="stylesheet" href="http://t4t5.github.io/sweetalert/dist/sweetalert.css">
 
-<!-- Modales -->
-<?php include'../modal/articulos/agregar.php'; ?>
-<?php include'../modal/articulos/eliminar.php'; ?>
-</head>
+<!-- DataTables -->
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
 
+</head>
 <body>
+<!-- Modales -->
+<?php include'../modal/articulos/agregar.php'; ?> <!-- Agregar -->
+<?php include'../modal/articulos/eliminar.php'; ?> <!-- Eliminar -->
 
 <div class="container-fluid"> 
 

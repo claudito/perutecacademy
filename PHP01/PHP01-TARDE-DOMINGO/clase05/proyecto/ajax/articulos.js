@@ -37,29 +37,30 @@ event.preventDefault();
 });
 
 
-
-
-$('#moda-eliminar').on('show.bs.modal', function (event) {
-      var button = $(event.relatedTarget) // Botón que activó el modal
-      var id = button.data('id') // Extraer la información de atributos de datos
+  //data-codigo="<?php echo $value['codigo']; ?>"
+$('#modal-eliminar').on('show.bs.modal', function (event) {
+      var button      = $(event.relatedTarget) // Botón que activó el modal
+      var codigo      = button.data('codigo') // Extraer la información de atributos de datos
+      var descripcion = button.data('descri')
       var modal = $(this)
-      modal.find('#id').val(id)
+      modal.find('#codigo').val(codigo)
+      modal.find('#descripcion').val(descripcion)
     })
 
 
 
-$( "#eliminarDatos" ).submit(function( event ) {
+$( "#eliminar" ).submit(function( event ) {
     var parametros = $(this).serialize();
        $.ajax({
           type: "POST",
-          url: "procesos/eliminar.php",
+          url: "../controlador/eliminar.php",
           data: parametros,
            beforeSend: function(objeto){
             $("#mensaje").html("Mensaje: Cargando...");
             },
           success: function(datos){
           $("#mensaje").html(datos);
-          $('#dataDelete').modal('hide');
+          $('#modal-eliminar').modal('hide');
           loadTabla(1);
           }
       });

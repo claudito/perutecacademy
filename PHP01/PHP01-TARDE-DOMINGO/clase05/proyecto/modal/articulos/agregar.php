@@ -21,17 +21,24 @@
 
 <div class="form-group">
 <label>Unidad</label>
-<input type="text" name="unidad" id="" class="form-control" required="">
+<select name="unidad" id="" class="form-control" required="">
+<option value="">[Seleccionar]</option>
+<?php 
+$unidad  =  new Unidad();
+foreach ($unidad->lista() as $key => $value): ?>
+<option value="<?php echo $value['codigo'] ?>"><?php echo $value['codigo'] ?></option>
+<?php endforeach ?>
+</select>
 </div>
 
 <div class="form-group">
 <label>Cantidad</label>
-<input type="number" name="cantidad" id="" class="form-control" required="">
+<input type="number"  step="any"  name="cantidad" id="" class="form-control" required="">
 </div>
 
 <div class="form-group">
 <label>Precio</label>
-<input type="number" name="precio" id="" class="form-control" required="">
+<input type="number" step="any" name="precio" id="" class="form-control" required="">
 </div>
 
 

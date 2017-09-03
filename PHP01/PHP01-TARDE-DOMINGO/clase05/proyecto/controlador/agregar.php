@@ -2,9 +2,9 @@
 
 include'../autoload.php';
 
- $codigo       =  trim($_POST['codigo']);
- $descripcion  =  trim($_POST['descripcion']);
- $unidad       =  $_POST['unidad'];
+ $codigo       =  htmlentities(trim($_POST['codigo']), ENT_QUOTES, "UTF-8");
+ $descripcion  =  htmlentities(trim($_POST['descripcion']), ENT_QUOTES, "UTF-8");
+ $unidad       =  htmlentities(trim($_POST['unidad']), ENT_QUOTES, "UTF-8");
  $cantidad     =  $_POST['cantidad'];
  $precio       =  $_POST['precio'];
 

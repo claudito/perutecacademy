@@ -8,11 +8,13 @@
 			</div>
 			<form id="eliminar">
 			<div class="modal-body">
+			  <input type="hidden" id="codigo" name="codigo">
+
 			 ¿Desea eliminar el artículo seleccionado?
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-				<button type="submit" class="btn btn-primary">Si</button>
+				<button type="submit" class="btn btn-danger">Si</button>
 			</div>
 		   </form>
 		</div>
