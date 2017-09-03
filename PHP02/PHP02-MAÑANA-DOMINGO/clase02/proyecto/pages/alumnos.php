@@ -9,8 +9,8 @@ $assets ->principal('Lista de Alumnos');
 $assets ->datatables();
 $assets->sweetalert();
 $html   ->header();
-include'../vistas/modal/alumno/agregar.php';
-
+include'../vistas/modal/alumno/agregar.php';#modal agregar
+include'../vistas/modal/alumno/eliminar.php';#modal eliminar
 ?>
 
 

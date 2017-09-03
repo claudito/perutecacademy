@@ -16,7 +16,7 @@ $alumnos = new Alumnos($nombres,$apellidos,$dni,$user,$pass);
 $valor   =  $alumnos->agregar();
 
 
-if ($valor=='ok') x|
+if ($valor=='ok') 
 {
  
  $mensaje->sweetalert('Buen Trabajo','success','Datos Registrados Correctamente',2);

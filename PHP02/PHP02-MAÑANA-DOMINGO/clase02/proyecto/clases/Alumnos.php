@@ -48,6 +48,23 @@ function agregar()
 }
 
 
+function eliminar($id)
+{
+	$conexion  =  new Conexion();
+	$query     =  "DELETE FROM alumnos WHERE id='".$id."'";
+	$result    = $conexion->query($query);
+	if ($result) 
+	{
+		return "ok";
+	} 
+	else 
+	{
+		return "error";
+	}
+	
+}
+
+
 function lista()
 {
 	
