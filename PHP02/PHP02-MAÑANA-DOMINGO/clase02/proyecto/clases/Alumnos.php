@@ -65,6 +65,27 @@ function eliminar($id)
 }
 
 
+function actualizar($id)
+{
+	$conexion  =  new Conexion();
+	$query     =  "UPDATE alumnos SET 
+	nombres='".$this->nombres."',
+	apellidos='".$this->apellidos."',
+	dni='".$this->dni."',
+	user='".$this->user."'
+	 WHERE id='".$id."'";
+	$result    = $conexion->query($query);
+	if ($result) 
+	{
+		return "ok";
+	} 
+	else 
+	{
+		return "error";
+	}	
+}
+
+
 function lista()
 {
 	
@@ -99,20 +120,15 @@ while ($fila  =  mysqli_fetch_assoc($result))
 
 
 
-function consulta($id)
+function consulta($id,$campo)
 {
 	
-$dato     = array();
 $conexion =  new Conexion();
 $query    =  "SELECT  * FROM alumnos 
               WHERE id='".$id."'";
 $result   =  $conexion->query($query);
-while ($fila  =  mysqli_fetch_assoc($result)) 
-{
-	$dato[] =  $fila;
-}
-   
-   return $dato;
+$dato     =  mysqli_fetch_array($result);
+return $dato[$campo];
 
 }
 
