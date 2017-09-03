@@ -22,6 +22,7 @@ $articulos  =  new Articulos();
 					<th>Unidad</th>
 					<th>Cantidad</th>
 					<th>Precio</th>
+					<th>Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -32,6 +33,11 @@ $articulos  =  new Articulos();
 			<td><?php echo $value['unidad']; ?></td>
 			<td><?php echo $value['cantidad']; ?></td>
 			<td><?php echo $value['precio']; ?></td>
+			<td>
+			<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-eliminar" 
+			 data-codigo="<?php echo $value['codigo']; ?>"
+			 ><i class="glyphicon glyphicon-trash"></i></button>
+			</td>
 			</tr>
 			<?php endforeach ?>
 			</tbody>

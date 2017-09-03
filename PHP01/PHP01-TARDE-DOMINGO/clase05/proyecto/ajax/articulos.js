@@ -39,7 +39,7 @@ event.preventDefault();
 
 
 
-$('#dataDelete').on('show.bs.modal', function (event) {
+$('#moda-eliminar').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget) // Botón que activó el modal
       var id = button.data('id') // Extraer la información de atributos de datos
       var modal = $(this)

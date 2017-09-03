@@ -24,7 +24,9 @@
 <script src="http://t4t5.github.io/sweetalert/dist/sweetalert-dev.js"></script>
 <link rel="stylesheet" href="http://t4t5.github.io/sweetalert/dist/sweetalert.css">
 
+<!-- Modales -->
 <?php include'../modal/articulos/agregar.php'; ?>
+<?php include'../modal/articulos/eliminar.php'; ?>
 </head>
 
 <body>

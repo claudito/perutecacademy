@@ -2,14 +2,14 @@
 
 include'../autoload.php';
 
- $codigo       =  strlen(trim($_POST['codigo']));
- $descripcion  =  strlen(trim($_POST['descripcion']));
+ $codigo       =  trim($_POST['codigo']);
+ $descripcion  =  trim($_POST['descripcion']);
  $unidad       =  $_POST['unidad'];
  $cantidad     =  $_POST['cantidad'];
  $precio       =  $_POST['precio'];
 
 
-if ($codigo>0 AND $descripcion>0) 
+if (strlen($codigo)>0 AND strlen($descripcion)>0) 
 
 {
  
