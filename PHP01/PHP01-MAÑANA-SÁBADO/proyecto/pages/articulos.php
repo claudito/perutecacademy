@@ -15,6 +15,11 @@
 
 <!-- Importar Funciones JavaScript de Bootstrap -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Sweet Alert 2 -->
+<script src="https://limonte.github.io/sweetalert2/dist/sweetalert2.min.js"></script>
+<link rel="stylesheet" href="https://limonte.github.io/sweetalert2/dist/sweetalert2.min.css">
+
 </head>
 <body>
 <?php include'../modal/articulos/agregar.php'; ?>
@@ -29,7 +34,7 @@
 
 <div id="mensaje"></div><!-- Mensaje -->
 <div id="loader" class="text-center">
-<img src="../img/loader.gif" alt="" class="img-res">
+<img src="../img/loader.gif" alt="" class="img-responsive">
 </div>  <!-- Mensaje de Carga -->
 <div id="tabla"></div>   <!-- Información -->
 

@@ -14,7 +14,31 @@ if (strlen($codigo)>0 AND strlen($descripcion)>0 AND strlen($unidad)>0)
  $articulos  =  new Articulos();
  $valor  = $articulos->agregar($codigo,$descripcion,$unidad,$cantidad,$precio);
 
-  echo $valor;
+if ($valor=='ok') 
+{
+
+ echo "<script>
+ swal({
+  title: 'Buen Trabajo',
+  text: 'Artículo Registrado',
+  timer: 2000,
+  type : 'success'
+})
+</script>";
+
+} 
+else
+{
+ echo "<script>
+swal({
+  title: 'Error',
+  text: 'Consulte al área de Soporte',
+  timer: 2000,
+  type : 'error'
+})
+ </script>";
+}
+
 
 
 }

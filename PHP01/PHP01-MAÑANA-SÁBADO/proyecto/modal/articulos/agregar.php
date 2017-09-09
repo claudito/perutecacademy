@@ -10,6 +10,8 @@
 			<form  id="agregar">
 
 			<div class="modal-body">
+          
+            <div id="mensaje_agregar"></div>
 
 			<div class="form-group">
 			<label>Código</label>

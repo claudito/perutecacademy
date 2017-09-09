@@ -10,6 +10,7 @@
 		<form id="eliminar">
 		<div class="modal-body">
 		<input type="hidden" name="codigo" id="codigo">
+	
 		¿Estas seguro de eliminar el código seleccionado?
 		</div>
 		<div class="modal-footer">
