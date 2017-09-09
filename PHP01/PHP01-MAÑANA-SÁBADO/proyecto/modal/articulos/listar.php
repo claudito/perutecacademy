@@ -13,7 +13,7 @@ $articulos  =  new Articulos();
 	</div>
 	<div class="panel-body">
 	<div class="table-responsive">
-	<table class="table table-hover">
+	<table class="table table-hover" id="consulta">
 		<thead>
 			<tr>
 				<th>ID</th>
@@ -33,8 +33,8 @@ $articulos  =  new Articulos();
 		<td><?php echo $value['codigo']; ?></td>
 		<td><?php echo $value['descripcion']; ?></td>
 		<td><?php echo $value['unidad']; ?></td>
-		<td><?php echo $value['cantidad']; ?></td>
-		<td><?php echo $value['precio']; ?></td>
+		<td><?php echo round($value['cantidad'],2); ?></td>
+		<td><?php echo round($value['precio'],2); ?></td>
 		<td>
 <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-eliminar" 
  data-codigo="<?php echo $value['codigo']; ?>"
@@ -80,6 +80,12 @@ $articulos  =  new Articulos();
       </div>
     </div>
   </div>
+
+  <script>
+  $(document).ready(function() {
+    $('#consulta').DataTable();
+} );
+  </script>
 <!-- Fin Modal Actualizar -->
 <?php else: ?>
 <p class="alert alert-warning">No hay Información Disponible.</p>

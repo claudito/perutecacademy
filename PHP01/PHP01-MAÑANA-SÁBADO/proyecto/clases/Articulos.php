@@ -54,7 +54,7 @@ try {
   
   $conexion =  new Conexion();
   $bd       =  $conexion->get_conexion();
-  $query    =  "UPDATE maeassrt SET descripcion=:descripcion,unidad=:unidad,cantidad=:cantidad,precio=:precio WHERE codigo=:codigo";
+  $query    =  "UPDATE maeart SET descripcion=:descripcion,unidad=:unidad,cantidad=:cantidad,precio=:precio WHERE codigo=:codigo";
   $statement = $bd->prepare($query);
   $statement->bindParam(':codigo',$codigo);
   $statement->bindParam(':descripcion',$descripcion);

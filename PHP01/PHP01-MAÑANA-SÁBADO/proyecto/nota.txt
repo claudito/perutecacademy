@@ -1,1 +1,11 @@
 https://github.com/claudito/perutecacademy
+
+Revisar :
+
+https://silviomoreto.github.io/bootstrap-select/
+
+https://selectize.github.io/selectize.js/
+
+https://getbootstrap.com/docs/4.0/getting-started/introduction/
+
+http://foundation.zurb.com/sites/docs/menu.html

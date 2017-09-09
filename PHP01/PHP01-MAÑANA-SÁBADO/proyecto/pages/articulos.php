@@ -1,3 +1,4 @@
+<?php include'../autoload.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -20,11 +21,24 @@
 <script src="https://limonte.github.io/sweetalert2/dist/sweetalert2.min.js"></script>
 <link rel="stylesheet" href="https://limonte.github.io/sweetalert2/dist/sweetalert2.min.css">
 
+<!-- Datatables -->
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+
 </head>
 <body>
 <?php include'../modal/articulos/agregar.php'; ?>
 <?php include'../modal/articulos/eliminar.php'; ?>
 <div class="container-fluid">
+
+<div class="row">
+<div class="col-md-12">
+<?php include'nav.php'; ?>
+</div>
+</div>
+
+
 <div class="row">
 <div class="col-md-12">
 
