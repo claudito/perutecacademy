@@ -4,7 +4,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title">Agregar Usuario</h4>
+				<h4 class="modal-title">Agregar Alumno</h4>
 			</div>
 
 			<form id="agregar">
@@ -13,20 +13,23 @@
 
 			<div class="form-group">
 			<label>Código</label>
-			<input type="text" name="codigo" id="" class="form-control">
+			<input type="text" name="codigo" id="" class="form-control" onchange="Mayusculas(this)" >
 			</div>
 
 			<div class="form-group">
 			<label>Nombres</label>
-			<input type="text" name="nombres" id="" class="form-control">
+			<input type="text" name="nombres" id="" class="form-control" onchange="Mayusculas(this)">
 			</div>
 
 			<div class="form-group">
 			<label>Apellidos</label>
-			<input type="text" name="apellidos" id="" class="form-control">
+			<input type="text" name="apellidos" id="" class="form-control" onchange="Mayusculas(this)">
 			</div>
 
-			
+			<div class="form-group">
+			<label>Edad</label>
+			<input type="number" name="edad" id="" class="form-control">
+			</div>
 				
 			</div>
 			<div class="modal-footer">

@@ -3,7 +3,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Lista de Usuarios</title>
+  <title>Lista de Alumnos</title>
 
 <!-- Optimizar el sitio en dispositivos móviles -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,7 +32,6 @@
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
 
-
 <script>
 function Mayusculas(field) {
 field.value         = field.value.toUpperCase();
@@ -40,11 +39,12 @@ field.value         = field.value.toUpperCase();
 }
 </script>
 
+
 </head>
 <body>
 
-<?php include'../modal/usuarios/agregar.php'; ?>
-<?php include'../modal/usuarios/eliminar.php'; ?>
+<?php include'../modal/alumno/agregar.php'; ?>
+<?php include'../modal/alumno/eliminar.php'; ?>
 
 <div class="container-fluid"> <!-- Inicio Contenedor -->
 
@@ -81,7 +81,7 @@ field.value         = field.value.toUpperCase();
 
 </div> <!-- Fin Contenedor -->
 
-<script src="../ajax/usuarios.js"></script>
+<script src="../ajax/alumno.js"></script>
 <script>loadTabla()</script>
 </body>
 </html>

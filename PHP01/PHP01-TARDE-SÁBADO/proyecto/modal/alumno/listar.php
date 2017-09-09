@@ -2,14 +2,14 @@
 
 include'../../autoload.php';
 
-$usuarios =  new Usuarios();
+$alumno =  new alumno();
 
  ?>
 
- <?php if ( count($usuarios->listar()) > 0): ?>
+ <?php if ( count($alumno->listar()) > 0): ?>
   <div class="panel panel-default">
   	<div class="panel-heading">
-  		<h3 class="panel-title">Lista de Usuarios</h3>
+  		<h3 class="panel-title">Lista de Alumnos</h3>
   	</div>
   	<div class="panel-body">
   	<div class="table-responsive">
@@ -19,16 +19,18 @@ $usuarios =  new Usuarios();
   					<th>Código</th>
   					<th>Nombres</th>
   					<th>Apellidos</th>
+            <th>Edad</th>
             <th>Acciones</th>
   				</tr>
   			</thead>
   			<tbody>
-  			<?php foreach ($usuarios->listar() as $key => $value): ?>
+  			<?php foreach ($alumno->listar() as $key => $value): ?>
 
 			<tr>
 			<td><?php echo $value['codigo']; ?></td>
 			<td><?php echo $value['nombres']; ?></td>
 			<td><?php echo $value['apellidos']; ?></td>
+      <td><?php echo $value['edad']; ?></td>
       <td>
   
       <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-eliminar" 
@@ -58,7 +60,7 @@ $usuarios =  new Usuarios();
   <script>
     $(".btn-edit").click(function(){
       codigo = $(this).data("codigo");
-      $.get("../modal/usuarios/actualizar.php","codigo="+codigo,function(data){
+      $.get("../modal/alumno/actualizar.php","codigo="+codigo,function(data){
         $("#form-edit").html(data);
       });
       $('#modal-actualizar').modal('show');
