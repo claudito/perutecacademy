@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Perutec</title>
+  <title>Lista de Usuarios</title>
 
 <!-- Optimizar el sitio en dispositivos móviles -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,8 +19,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <!-- Sweet Alert -->
-<script src="https://sweetalert.js.org/dist/sweetalert-dev.js"></script>
-<link rel="stylesheet" href="https://sweetalert.js.org/dist/sweetalert.css">
+<script src="https://limonte.github.io/sweetalert2/dist/sweetalert2.min.js"></script>
+
+<link rel="stylesheet" href="https://limonte.github.io/sweetalert2/dist/sweetalert2.min.css">
 
 
 </head>

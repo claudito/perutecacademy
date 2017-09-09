@@ -1,0 +1,12 @@
+Web para descargar un carpeta especifica de algún repositorio en github.com:
+https://minhaskamal.github.io/DownGit/#/home
+
+
+Versiones de Sweet Alert
+https://limonte.github.io/sweetalert2/
+
+
+https://lipis.github.io/bootstrap-sweetalert/
+
+
+.form-group>(label+input:text.form-control)

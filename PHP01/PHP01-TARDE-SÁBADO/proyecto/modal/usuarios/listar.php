@@ -35,6 +35,10 @@ $usuarios =  new Usuarios();
       data-codigo="<?php echo $value['codigo']; ?>"
       data-nombres="<?php echo $value['nombres']; ?>"
       ><i class="glyphicon glyphicon-trash"></i></button>
+
+      <button class="btn btn-primary btn-sm btn-edit"  
+      data-codigo="<?php echo $value['codigo']; ?>"
+       ><i class="glyphicon glyphicon-edit"></i></button>
   
       </td>
 			</tr>
@@ -45,6 +49,38 @@ $usuarios =  new Usuarios();
   	</div>
   	</div>
   </div>
+     <!-- 
+     data-codigo="001"
+     codigo="001"
+
+     -->
+   <!-- Modal -->
+  <script>
+    $(".btn-edit").click(function(){
+      codigo = $(this).data("codigo");
+      $.get("../modal/usuarios/actualizar.php","codigo="+codigo,function(data){
+        $("#form-edit").html(data);
+      });
+      $('#modal-actualizar').modal('show');
+    });
+  </script>
+
+  <!-- Inicio Modal Actualizar -->
+  <div class="modal fade" id="modal-actualizar" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Actualizar</h4>
+        </div>
+        <div class="modal-body">
+        <div id="form-edit"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<!-- Fin Modal Actualizar -->
  <?php else: ?>
 <p class="alert alert-warning">No hay datos disponibles.</p>
  <?php endif ?>
