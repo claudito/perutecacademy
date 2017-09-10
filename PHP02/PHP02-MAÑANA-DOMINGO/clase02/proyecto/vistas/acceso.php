@@ -3,45 +3,42 @@
 $assets  =  new Assets();
 $html    =  new Html();
 $assets ->principal('Acceso');
+$assets ->sweetalert();
 $html   ->header();
 
 ?>
-
-<div class="row">
-<div class="col-md-4">
-</div>
-<div class="col-md-4">
-
-<center><img src="assets/img/login.png" alt="" class="img-responsive"></center>
-
-<div class="panel panel-info">
-	<div class="panel-heading">
-		<h3 class="panel-title text-center">Acceso</h3>
-	</div>
-	<div class="panel-body">
-		<form action="controlador/login.php" method="POST">
-	
-<div class="form-group">
-<label>Usuario</label>	
-<input type="text" name="usuario" id="" class="form-control">
-</div>
-
-<div class="form-group">
-<label>Contraseña</label>
-<input type="password" name="password" id="" class="form-control">
-</div>
-
-<button class="btn btn-primary">Ingresar</button>
-
-</form>
-	</div>
-</div>
-
-</div>
-</div>
+<!-- CSS  -->
+<link href="assets/css/login.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
 
+<div class="container">
+<div class="card card-container">
+<img id="profile-img" class="profile-img-card" src="assets/img/logo.png" />
+<p id="profile-name" class="profile-name-card"></p>
 
+<div id="mensaje"></div>
+
+<form   autocomplete="off" role="form" class="form-signin">
+
+<input class="form-control" placeholder="Usuario" id="usuario" 
+ name="usuario" type="text" value="" autofocus="" required>
+
+<input class="form-control" placeholder="Contraseña" id="pass"
+  name="pass" type="password" value=""    autocomplete="off" required>
+
+<input type="hidden" id="url" value="<?php echo URL; ?>">
+
+
+<input type="submit" id="login" class="btn btn-lg btn-success btn-block btn-signin" 
+ value="Iniciar Sesión">
+
+</form><!-- /form -->
+
+
+</div><!-- /card-container -->
+</div><!-- /container -->
+
+<script src="ajax/login.js"></script>
 <?php 
 
 $html->footer('PerúTec Academy');

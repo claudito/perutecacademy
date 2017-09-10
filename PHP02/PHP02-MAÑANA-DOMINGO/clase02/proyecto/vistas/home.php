@@ -2,8 +2,16 @@
 
 $assets  =  new Assets();
 $html    =  new Html();
+$mensaje =  new Mensaje();
 $assets ->principal('Bienvenidos');
+$assets->sweetalert();
 $html   ->header();
+
+if (isset($_GET['ok'])) 
+{
+
+$mensaje->sweetalert('Bienvenido','success',$_SESSION['nombres'].' '.$_SESSION['apellidos'],2);
+}
 
 ?>
 

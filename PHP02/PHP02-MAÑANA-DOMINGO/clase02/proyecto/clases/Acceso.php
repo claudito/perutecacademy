@@ -33,11 +33,11 @@ function login()
       $_SESSION['nombres']   = $dato['nombres'];
       $_SESSION['apellidos'] = $dato['apellidos'];
 
-	  return "existe";
+	  return "ok";
 	}
 	else
 	{
-	 return "noexiste";
+	 return "error";
 	}
   
 

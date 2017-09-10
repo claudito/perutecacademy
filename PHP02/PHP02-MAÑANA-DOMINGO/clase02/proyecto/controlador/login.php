@@ -2,31 +2,33 @@
 
 include'../autoload.php';
 
-$user;
-$pass;
 
-$user  = $_POST['usuario'];
-$pass  = $_POST['password'];
+$user  = trim($_POST['usuario']);
+$pass  = trim($_POST['pass']);
 
-$acceso  = new Acceso($user,$pass);
 
-if ($acceso->login()=='existe')
+if (strlen($user)==0 AND strlen($pass)==0) 
 {
-   echo "
-    <script>
-    alert('Bienvenido');
-    window.location='".URL."';
-    </script>";
+   echo "userpassvacio";
 } 
+else if (strlen($user)==0)
+{
+   echo "uservacio";
+}
+else if (strlen($pass)==0)
+{
+   echo "passvacio";
+}
 else 
 {
-  echo "
-    <script>
-    alert('El usuario o contraseña no existe');
-    window.location='".URL."';
-    </script>";
+    
+$acceso  = new Acceso($user,$pass);
+
+echo $acceso->login();
+
 
 }
+
 
 
 
