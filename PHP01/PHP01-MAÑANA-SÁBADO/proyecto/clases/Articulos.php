@@ -2,14 +2,17 @@
 class Articulos
 {
 
+  protected $codigo;
 
-function __construct()
+
+function __construct($codigo='',$descripcion,$unidad,$cantidad,$precio)
 {
+   $this->codigo = $codigo;
 
 }
 
 
-function agregar($codigo,$descripcion,$unidad,$cantidad,$precio)
+function agregar()
 {
 
 
@@ -20,7 +23,7 @@ function agregar($codigo,$descripcion,$unidad,$cantidad,$precio)
 
      $query     = "INSERT INTO maeart(codigo,descripcion,unidad,cantidad,precio)VALUES(:codigo,:descripcion,:unidad,:cantidad,:precio)";
     $statement = $bd->prepare($query);
-    $statement->bindParam(':codigo',$codigo);
+    $statement->bindParam(':codigo',$this->codigo);
     $statement->bindParam(':descripcion',$descripcion);
     $statement->bindParam(':unidad',$unidad);
     $statement->bindParam(':cantidad',$cantidad);
