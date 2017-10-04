@@ -2,9 +2,12 @@
 
 class Articulos{
 
+protected $codigo;
 
-function __construct()
+
+function __construct($codigo='')
 {
+    $this->codigo  = $codigo;
 
 }
 
@@ -32,7 +35,7 @@ function lista()
 
 
 
-function agregar($codigo,$descripcion,$unidad,$cantidad,$precio)
+function agregar($descripcion,$unidad,$cantidad,$precio)
 {
 
  try {
@@ -41,7 +44,7 @@ function agregar($codigo,$descripcion,$unidad,$cantidad,$precio)
     
     $query     = "SELECT * FROM maeart WHERE codigo=:codigo";
     $statement = $conexion->prepare($query);
-    $statement->bindParam(':codigo',$codigo);
+    $statement->bindParam(':codigo',$this->codigo);
     $statement->execute();
     $result   = $statement->fetchAll();
     
@@ -53,7 +56,7 @@ function agregar($codigo,$descripcion,$unidad,$cantidad,$precio)
     {
      $query     = "INSERT INTO maeart(codigo,descripcion,unidad,cantidad,precio)VALUES(:codigo,:descripcion,:unidad,:cantidad,:precio)";
     $statement = $conexion->prepare($query);
-    $statement->bindParam(':codigo',$codigo);
+    $statement->bindParam(':codigo',$this->codigo);
     $statement->bindParam(':descripcion',$descripcion);
     $statement->bindParam(':unidad',$unidad);
     $statement->bindParam(':cantidad',$cantidad);
@@ -88,7 +91,7 @@ function eliminar($codigo)
     $conexion  = $modelo->get_conexion();
      $query     = "DELETE FROM  maeart  WHERE codigo=:codigo";
     $statement = $conexion->prepare($query);
-    $statement->bindParam(':codigo',$codigo);
+    $statement->bindParam(':codigo',$this->codigo);
     if($statement)
     {
     $statement->execute();
