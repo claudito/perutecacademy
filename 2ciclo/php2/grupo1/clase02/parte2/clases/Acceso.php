@@ -5,7 +5,7 @@ class Acceso
 protected $user;
 protected $pass;
 
-function __construct($frm_user,$frm_pass)
+function __construct($frm_user='',$frm_pass='')
 {
 
 	$this->user = $frm_user;
@@ -19,9 +19,6 @@ function login()
 
 try {
 	
-#202cb962ac59075b964b07152d234b70
-#luis
-
 $conexion =  new Conexion();
 $bd       =  $conexion->get_conexion();
 $query    =  "SELECT  * FROM usuario WHERE 
@@ -36,13 +33,13 @@ if (count($result)>0)
    session_start();
    $statement->execute();
    $dato  = $statement->fetch();
-   $_SESSION[KEY.'session_id']     = $dato['id'];
-   $_SESSION[KEY.'session_usuario']= $dato['nombres'];
+   $_SESSION[KEY.ID]     = $dato['id'];
+   $_SESSION[KEY.NOMBRES]= $dato['nombres'];
 
    echo "
    <script>
    alert('Bienvenido');
-   window.location='bienvenido.php';
+   window.location='".URL."';
    </script>";
 
 
@@ -67,6 +64,38 @@ else
 
 function logout()
 {
+
+
+try {
+  
+  session_start();
+if (isset($_SESSION[KEY.ID])) 
+{
+    unset($_SESSION[KEY.ID]);
+    unset($_SESSION[KEY.NOMBRES]);
+    
+    echo "<script>
+    alert('Adios');
+    window.location='".URL."';
+    </script>";   
+} 
+else
+{
+    echo "<script>
+    alert('No hay Sesión');
+    window.location='".URL."';
+    </script>";
+}
+
+
+} catch (Exception $e) {
+
+  echo "Error: ".$e->getMessage();
+  
+}
+
+
+
 
 }
 

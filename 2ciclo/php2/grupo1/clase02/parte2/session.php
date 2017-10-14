@@ -1,6 +1,6 @@
 <?php 
 
-if (!isset($_SESSION[KEY.'session_id'])) 
+if (!isset($_SESSION[KEY.ID])) 
 {
    echo "
    <script>

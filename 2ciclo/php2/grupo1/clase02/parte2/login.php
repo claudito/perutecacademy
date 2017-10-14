@@ -1,8 +1,6 @@
 <?php 
 
-include'config.php';
-include'clases/Conexion.php';
-include'clases/Acceso.php';
+include'autoload.php';
 
 $usuario  =  $_POST['usuario'];
 $pass     =  $_POST['pass'];

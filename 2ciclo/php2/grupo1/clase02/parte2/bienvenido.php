@@ -1,9 +1,3 @@
-<?php 
-include'config.php';
-session_start();
-include'session.php';
-
- ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,7 +6,7 @@ include'session.php';
 </head>
 <body>
 	
-<h1>Bienvenido <?php echo $_SESSION[KEY.'session_usuario']; ?></h1>
+<h1>Bienvenido <?php echo $_SESSION[KEY.NOMBRES]; ?></h1>
 
 <a href="logout.php">Cerrar Sesión</a>
 

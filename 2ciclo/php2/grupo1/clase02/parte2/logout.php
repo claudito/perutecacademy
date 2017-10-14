@@ -1,16 +1,9 @@
 <?php 
 
-include'config.php';
-session_start();
-include'session.php';
+include'autoload.php';
+$acceso  =  new Acceso();
+$acceso->logout();
 
-unset($_SESSION[KEY.'session_usuario']);
-unset($_SESSION[KEY.'session_id']);
 
- echo "
-   <script>
-   alert('Adios');
-   window.location='acceso.php';
-   </script>";
 
  ?>
