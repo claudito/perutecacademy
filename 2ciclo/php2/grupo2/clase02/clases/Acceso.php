@@ -49,7 +49,13 @@ if (count($result)>0)
 }
 else
 {
-  echo "no existe el usuario";
+   
+    echo "
+  <script>
+  alert('EL Usuario o Contraseña son incorrectos');
+  window.location='".URL."';
+  </script>";
+
 }
 
 } catch (Exception $e) {
@@ -57,6 +63,38 @@ else
     echo "Error:".$e->getMessage();
 
 }
+
+
+
+}
+
+
+function logout()
+{
+ 
+ session_start();
+  if (isset($_SESSION[KEY.ID])) 
+  {
+      unset($_SESSION[KEY.ID]);
+      unset($_SESSION[KEY.NOMBRES]);
+      echo "
+    <script>
+    alert('Adios');
+    window.location='".URL."';
+    </script>";
+
+  } 
+  else 
+  {
+     echo "
+  <script>
+  alert('No ha iniciado Sesión');
+  window.location='".URL."';
+  </script>";
+  
+  }
+
+
 
 
 
