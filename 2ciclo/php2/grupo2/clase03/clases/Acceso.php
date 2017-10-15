@@ -36,13 +36,13 @@ if (count($result)>0)
 
   $statement->execute();
   $dato  = $statement->fetch();
-  $_SESSION[KEY.ID]      = $dato['id'];
-  $_SESSION[KEY.NOMBRES] = $dato['nombres'];
+  $_SESSION['id']      = $dato['id'];
+  $_SESSION['nombres'] = $dato['nombres'];
 
   echo "
   <script>
   alert('Bienvenido');
-  window.location='".URL."';
+  window.location='home.php';
   </script>";
 
 
