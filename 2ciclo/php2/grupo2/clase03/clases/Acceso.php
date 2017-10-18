@@ -36,20 +36,26 @@ if (count($result)>0)
 
   $statement->execute();
   $dato  = $statement->fetch();
-  $_SESSION['id']      = $dato['id'];
-  $_SESSION['nombres'] = $dato['nombres'];
+  $_SESSION[KEY.ID]      = $dato['id'];
+  $_SESSION[KEY.NOMBRES] = $dato['nombres'];
 
   echo "
   <script>
   alert('Bienvenido');
-  window.location='home.php';
+  window.location='".URL."';
   </script>";
 
 
 }
 else
 {
-  echo "no existe el usuario";
+   
+    echo "
+  <script>
+  alert('EL Usuario o Contraseña son incorrectos');
+  window.location='".URL."';
+  </script>";
+
 }
 
 } catch (Exception $e) {
@@ -57,6 +63,38 @@ else
     echo "Error:".$e->getMessage();
 
 }
+
+
+
+}
+
+
+function logout()
+{
+ 
+ session_start();
+  if (isset($_SESSION[KEY.ID])) 
+  {
+      unset($_SESSION[KEY.ID]);
+      unset($_SESSION[KEY.NOMBRES]);
+      echo "
+    <script>
+    alert('Adios');
+    window.location='".URL."';
+    </script>";
+
+  } 
+  else 
+  {
+     echo "
+  <script>
+  alert('No ha iniciado Sesión');
+  window.location='".URL."';
+  </script>";
+  
+  }
+
+
 
 
 
