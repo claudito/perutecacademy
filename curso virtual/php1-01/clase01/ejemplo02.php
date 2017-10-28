@@ -64,7 +64,10 @@ maxItems: 3
 <input type="checkbox" name="excel" id="">Excel
 <input type="checkbox" name="word" id="">Word
 <input type="checkbox" name="powerpoint" id="">Power Point
-
+<br>
+<label>Comentario</label>
+<textarea name="comentario" id="" cols="30" rows="10"></textarea>
+<br>
 <!-- 
 Check    = on
 no check = vació 

@@ -1,9 +1,9 @@
 <?php 
 
-class Conexion#Nombre de la clase
+class Conexion
 {
 
-#Función Constructor
+
 function __construct()
 {
 
@@ -19,9 +19,6 @@ $conexion = new PDO("mysql:host=".SERVER.";dbname=".BD."","".USER."","".PASS."",
 
 $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 return $conexion;
-#$conexion = ($conexion) ? "conectado" : "no conectado" ;
-#echo $conexion;
-
 
 } 
 catch (Exception $e) 
@@ -32,6 +29,7 @@ catch (Exception $e)
 
 
 }
+
 
 
 
