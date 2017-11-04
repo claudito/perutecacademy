@@ -7,8 +7,15 @@
 <body>
 	
 <form action="controlador/subir-archivo.php"  method="POST"  
- enctype="multipart/form-data">
-	
+enctype="multipart/form-data">
+
+<h1>Registrar Usuario</h1>
+
+<label>Nombre</label>
+<input type="text" name="nombre" id="" required="">
+
+<br>
+
 <label>Subir Archivo</label>
 <input type="file" name="archivo" id="" required="">	
 
