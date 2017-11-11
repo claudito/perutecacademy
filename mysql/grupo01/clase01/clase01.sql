@@ -1,4 +1,3 @@
-
 -- Listar Base de Datos
  show databases;
  
@@ -33,8 +32,25 @@ describe usuario;
 -- select
 SELECT * FROM usuario;
 SELECT  * FROM usuario limit 100;
+SELECT  * FROM  usuario WHERE id=1;
+SELECT  * FROM  usuario WHERE id=2;
+SELECT  * FROM  usuario WHERE id IN (1);
 
--- INSERTAR 
+-- INSERTAR
+INSERT INTO usuario(nombres,apellidos,dni,fecha_nac,user,pass)
+VALUES
+('Luis','Claudio','46794282','1990-07-15','luis',
+md5('123')),
+('Omar','Perez','12345678','1989-05-24','omar',
+md5('omar'));
 
+
+
+-- ACTUALIZAR
+UPDATE usuario SET apellidos='Claudio Ponce',nombres='Luis Augusto',
+date_update=current_timestamp
+ WHERE id=1 AND dni='46794282';
  
-
+ -- ELIMINAR
+ DELETE FROM usuario WHERE id=1
+ 
