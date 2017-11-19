@@ -28,7 +28,22 @@
 
 <div class="col-md-12"> <!-- Inicio Columna -->
 
+<?php if (isset($_GET['msj']) and $_GET['msj']=='ok'): ?>
+<p class="alert alert-success">Correo enviado Exitosamente</p>
+<?php endif ?>
+
+
 <h1>Envió de Correo</h1>
+
+<form action="http://correo.perutec.com.pe/perutecacademy/send_2.php"  method="POST" autocomplete="off">
+
+<div class="form-group">
+<label>Nombre</label>
+<input type="text" name="nombre" id="" 
+ class="form-control">
+</div>
+
+
 
 <div class="form-group">
 <label>Destinatario</label>
@@ -51,8 +66,20 @@
 <textarea name="mensaje"  rows="5" class="form-control"></textarea>
 </div>
 
+<?php 
+
+$url   =  'http://'.$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
+
+ ?>
+
+ <input type="hidden" name="url" value="<?php echo $url ?>">
+
+
+
+
 <button class="btn btn-primary">Enviar</button>
 
+</form>
 
 </div> <!-- Fin Columna -->
 
@@ -63,3 +90,5 @@
 
 </body>
 </html>
+
+
