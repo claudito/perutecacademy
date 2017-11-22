@@ -26,14 +26,22 @@ $usuario  = new Usuario();
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
 
 
+<!-- SweetAlert -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+
+
+
 </head>
 <body>
-
-<?php include'../modal/agregar.php'; ?>
+<!-- Modales -->
+<?php 
+include'../modal/usuario/agregar.php';
+include'../modal/usuario/eliminar.php';
+ ?>
 
 <div class="container-fluid">
-
-	
 
 <div class="row">
 <div class="col-md-12">
@@ -43,71 +51,18 @@ $usuario  = new Usuario();
  <i class="glyphicon glyphicon-plus"></i> Agregar</button>
 </div>
 
+<div id="mensaje"></div>
+<div id="loader"></div>
+<div id="tabla"></div>
 
-<?php if (count($usuario->lista())>0): ?>
-
-
-<div class="panel panel-default">
-	<div class="panel-heading">
-		<h3 class="panel-title">Lista de Usuarios 
-			<i class="glyphicon glyphicon-user"></i> </h3>
-	</div>
-	<div class="panel-body">
-    <div class="table-responsive">
-    <table id="consulta"  class="table">
-<thead>
-<tr>
-<th>ID</th>
-<th>Nombres</th>
-<th>Apellidos</th>
-<th>Fecha Creación</th>
-<th>Acciones</th>
-</tr>
-</thead>
-<tbody>
-<?php 
-foreach ($usuario->lista() as $key => $value): ?>
-<tr>
-<td><?php echo $value['id'] ?></td>
-<td><?php echo $value['nombres']; ?></td>
-<td><?php echo $value['apellidos']; ?></td>
-<td><?php echo $value['fecha_creacion']; ?></td>
-<td>
-<a href="editar.php?id=<?php  echo $value['id'] ?>" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i></a>
-<a href="../controlador/eliminar.php?id=<?php  echo $value['id'] ?>" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
-</td>
-</tr>
-<?php endforeach ?>
-</tbody>
-</table>
-
-
-    </div>
-	</div>
-</div>
-
-
-
-
-
-
-<script>
-$(document).ready(function() {
-    $('#consulta').DataTable();
-} );
-</script>
-
-<?php else: ?>
-
-<p>No hay datos disponibles</p>
-
-<?php endif ?>
-	
 
 </div>
 </div>
 
 </div>
 
+
+<script src="../ajax/usuario.js"></script>
+<script>loadTable();</script>
 </body>
 </html>

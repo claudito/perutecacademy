@@ -1,4 +1,4 @@
-<form action="../controlador/agregar.php" method="POST" autocomplete="off">
+<form  id="agregar"   autocomplete="off">
 
 <div class="modal fade" id="modal-agregar">
 	<div class="modal-dialog">
