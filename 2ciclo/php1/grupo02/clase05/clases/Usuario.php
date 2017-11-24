@@ -11,7 +11,7 @@ try {
 	
 $conexion   =  new Conexion();
 $bd         =  $conexion->get_conexion();
-$query      =  "SELECT * FROM  usuario";
+$query      =  "SELECT u.id,u.nombres,u.apellidos,u.codigo_area,a.descripcion as area,u.fecha_creacion FROM  usuario as u INNER JOIN area as a ON u.codigo_area=a.codigo";
 $statement  =  $bd->prepare($query);
 $statement->execute();
 $result     =  $statement->fetchAll();
@@ -36,7 +36,7 @@ try {
 	
 $conexion   =  new Conexion();
 $bd         =  $conexion->get_conexion();
-$query      =  "SELECT * FROM usuario WHERE id=:id";
+$query      =  "SELECT u.id,u.nombres,u.apellidos,u.codigo_area,a.descripcion as area,u.fecha_creacion FROM  usuario as u INNER JOIN area as a ON u.codigo_area=a.codigo WHERE u.id=:id";
 $statement  =  $bd->prepare($query);
 $statement->bindParam(':id',$id);
 $statement->execute();
@@ -54,17 +54,18 @@ return $result[$campo];
 
 }
 
-function agregar($nombres,$apellidos)
+function agregar($nombres,$apellidos,$area)
 {
 
 try {
 	
 $conexion   =  new Conexion();
 $bd         =  $conexion->get_conexion();
-$query      =  "INSERT INTO usuario(nombres,apellidos)VALUES(:nombres,:apellidos)";
+$query      =  "INSERT INTO usuario(nombres,apellidos,codigo_area)VALUES(:nombres,:apellidos,:codigo_area)";
 $statement  =  $bd->prepare($query);
 $statement->bindParam(':nombres',$nombres);
 $statement->bindParam(':apellidos',$apellidos);
+$statement->bindParam(':codigo_area',$area);
 
 if ($statement) 
 {
@@ -92,18 +93,19 @@ else
 
 
 
-function actualizar($id,$nombres,$apellidos)
+function actualizar($id,$nombres,$apellidos,$area)
 {
 
 try {
 	
 $conexion   =  new Conexion();
 $bd         =  $conexion->get_conexion();
-$query      =  "UPDATE usuario SET nombres=:nombres, apellidos=:apellidos WHERE id=:id";
+$query      =  "UPDATE usuario SET nombres=:nombres, apellidos=:apellidos,codigo_area=:codigo_area WHERE id=:id";
 $statement  =  $bd->prepare($query);
 $statement->bindParam(':id',$id);
 $statement->bindParam(':nombres',$nombres);
 $statement->bindParam(':apellidos',$apellidos);
+$statement->bindParam(':codigo_area',$area);
 
 if ($statement) 
 {

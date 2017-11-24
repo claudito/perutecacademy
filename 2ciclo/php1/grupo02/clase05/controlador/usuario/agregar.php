@@ -5,9 +5,11 @@ include'../../autoload.php';
 
 $nombres   = $_POST['nombres'];
 $apellidos = $_POST['apellidos'];
+$area      = $_POST['area'];
+
 
 $usuario   = new Usuario();
-$valor     = $usuario->agregar($nombres,$apellidos);
+$valor     = $usuario->agregar($nombres,$apellidos,$area);
 
 
 if ($valor=='ok') 

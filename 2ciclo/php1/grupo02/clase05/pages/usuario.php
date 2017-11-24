@@ -31,6 +31,12 @@ $usuario  = new Usuario();
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
 
+<!-- Convertir  a Mayusculas -->
+<script>
+function Mayusculas(field) {
+field.value         = field.value.toUpperCase();
+}
+</script>
 
 
 </head>
